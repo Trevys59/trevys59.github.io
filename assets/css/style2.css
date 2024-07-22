@@ -1,0 +1,212 @@
+/* Réinitialisation et styles de base */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    color: #333;
+}
+
+/* Styles du header */
+nav.navbar {
+    margin-bottom: 10px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #007bff;
+}
+
+/* section À propos */
+#about {
+    background-color: #fff;
+    padding: 50px 0;
+    color: #333;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+#about p, #about ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+#about ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#about ul li:before {
+    content: "•";
+    color: #007bff;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+#about a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#about a:hover {
+    text-decoration: underline;
+}
+
+#about .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+#about .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+#about .social-links a {
+    margin: 5px;
+}
+
+#about aside {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    #about {
+        padding: 30px 20px;
+    }
+
+    #about aside {
+        margin-top: 20px;
+    }
+}
+
+/* section Compétences */
+#skills .card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#skills .card:hover {
+    transform: translateY(-5px);
+}
+
+#skills .card-title {
+    color: #007bff;
+}
+
+#skills h2 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+/* section Projets */
+#projects .card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#projects .card:hover {
+    transform: translateY(-5px);
+}
+
+#projects h2 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+/* section Contact */
+#contact {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+@media (max-width: 767px) {
+    #contact-form {
+        padding: 15px;
+    }
+}
+
+/*Images des galeries
+.carousel-inner img {
+    max-height: 310px; 
+    object-fit: cover;
+}*/
+
+/* Styles du footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#BLC{
+    background-image: url('../images/blc/FondBasic.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: white; 
+    padding: 50px 0; 
+}
+
+#project-BLC{
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 20px;
+}
+
+.white-text {
+    color: white;
+}
+
+.material-symbols-outlined{
+    margin-top: 75px;
+    margin-left: 69px;
+    margin-right: 69px;
+    font-size: 3em !important;
+    box-shadow: 1px 5px 5px rgba(107, 107, 107, 0.842);
+}
