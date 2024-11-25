@@ -48,12 +48,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-//afficher le bouton après défilement
-window.addEventListener('scroll', () => {
-    const backToTop = document.getElementById('back-to-top');
+// Bouton retour en haut
+const backToTopButton = document.getElementById("back-to-top");
+
+window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
-        backToTop.style.display = 'block';
+        backToTopButton.classList.add("visible");
     } else {
-        backToTop.style.display = 'none';
+        backToTopButton.classList.remove("visible");
     }
+});
+
+
+// Animation au défilement
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+
+    const options = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });
