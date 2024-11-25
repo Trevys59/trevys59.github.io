@@ -127,6 +127,13 @@ nav.navbar {
     }
 }
 
+#about .row h3 {
+    color: #007bff;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+
 /* section Compétences */
 #skills .card {
     margin-bottom: 20px;
