@@ -21,10 +21,12 @@ nav.navbar {
 .navbar-nav .nav-item .nav-link {
     font-size: 1.1rem;
     transition: color 0.3s ease;
+    position: sticky;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
     color: #007bff;
+    position: sticky;
 }
 
 /* section À propos */
