@@ -18,29 +18,6 @@ function initSmoothScroll() {
     });
 }
 
-// Fonction pour gérer le bouton "Retour en haut"
-document.addEventListener("DOMContentLoaded", () => {
-    const backToTopButton = document.getElementById("back-to-top");
-
-    // Affiche ou cache le bouton selon la position de défilement
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-            backToTopButton.classList.add("visible");
-        } else {
-            backToTopButton.classList.remove("visible");
-        }
-    });
-
-    // Fait remonter la page lorsqu'on clique sur le bouton
-    backToTopButton.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-    });
-});
-
-
 // Fonction pour gérer le formulaire de contact
 function initContactForm() {
     const contactForm = document.getElementById("contact-form");

@@ -100,36 +100,6 @@ img:hover {
 }
 
 /* =========================================================================== */
-/* Bouton "Retour en haut"                                                    */
-/* =========================================================================== */
-#back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: var(--primary-color);
-  color: var(--light-color);
-  font-size: 1.5rem;
-  padding: 10px 15px;
-  border-radius: 50%;
-  box-shadow: var(--shadow-light);
-  cursor: pointer;
-  display: none;
-  transition: all 0.3s ease;
-}
-
-#back-to-top.visible {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-#back-to-top:hover {
-  background-color: var(--secondary-color);
-}
-
-/* =========================================================================== */
 /* Sections spécifiques                                                       */
 /* =========================================================================== */
 
@@ -186,6 +156,19 @@ img:hover {
   box-shadow: var(--shadow-dark);
 }
 
+#projects .card-title {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#projects .card-text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
 /* Section "Contact" */
 #contact {
   background-color: var(--light-color);
@@ -234,4 +217,33 @@ footer a:hover {
   section {
       padding: 30px 10px;
   }
+}
+
+/* =========================================================================== */
+/* BLC page                                                                   */
+/* =========================================================================== */
+#BLC{
+  background-image: url('../images/blc/FondBasic.png');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  color: white; 
+  padding: 50px 0; 
+}
+
+#project-BLC{
+  background-color: rgba(0, 0, 0, 0.7); 
+  padding: 20px;
+}
+
+.white-text {
+  color: white;
+}
+
+.material-symbols-outlined{
+  margin-top: 75px;
+  margin-left: 69px;
+  margin-right: 69px;
+  font-size: 3em !important;
+  box-shadow: 1px 5px 5px rgba(107, 107, 107, 0.842);
 }
