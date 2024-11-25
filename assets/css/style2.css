@@ -336,26 +336,48 @@ nav.navbar {
 
 
 /***********************************************************************************************************************************************************************************/
-/*** Styles du footer ***************************************************************************************************************************************************************/
+/*** Styles du footer **************************************************************************************************************************************************************/
 /***********************************************************************************************************************************************************************************/
 footer {
     background-color: #333;
-    color: white;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    color: #f8f9fa;
+    padding: 20px 0;
 }
 
-footer a {
+footer .footer-link {
     color: #f8f9fa;
     text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
-footer a:hover {
+footer .footer-link:hover {
+    color: #007bff;
     text-decoration: underline;
 }
 
+footer .social-links a {
+    color: #f8f9fa;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #007bff;
+}
+
+footer .fab, footer .fas {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .fab:hover, footer .fas:hover {
+    transform: scale(1.1);
+    color: #007bff;
+}
+
+/***********************************************************************************************************************************************************************************/
+/*** Autres ************************************************************************************************************************************************************************/
+/***********************************************************************************************************************************************************************************/
 #BLC{
     background-image: url('../images/blc/FondBasic.png');
     background-size: cover; 
@@ -404,18 +426,21 @@ footer a:hover {
     right: 20px;
     background-color: #007bff;
     color: #fff;
-    border-radius: 50%;
-    padding: 10px 15px;
     font-size: 1.5rem;
-    text-align: center;
+    padding: 10px 15px;
+    border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
     z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #back-to-top:hover {
     background-color: #0056b3;
 }
+
 
 section {
     padding: 50px 0;
