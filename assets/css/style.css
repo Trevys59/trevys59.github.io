@@ -1,215 +1,236 @@
-/* Réinitialisation et styles de base */
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* =========================================================================== */
+/* Variables globales                                                         */
+/* =========================================================================== */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #0056b3;
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --light-color: #fff;
+  --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-dark: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-h2 {
-    color: #333;
+/* =========================================================================== */
+/* Réinitialisation des styles                                                */
+/* =========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Styles du header */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+/* =========================================================================== */
+/* Liens et boutons                                                           */
+/* =========================================================================== */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+button, .btn-primary {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button:hover, .btn-primary:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* =========================================================================== */
+/* Sections générales                                                         */
+/* =========================================================================== */
+section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+section h2 {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+/* =========================================================================== */
+/* Header et navigation                                                       */
+/* =========================================================================== */
 nav.navbar {
-    margin-bottom: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
 }
 
-/* section À propos */
-#about {
-    background-color: #fff; /* Arrière-plan blanc ou toute autre couleur de votre choix */
-    padding: 10px 0;
-    color: #333; /* Couleur du texte */
-    text-align: center;
-  }
-  
-  #about h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #007bff; /* Utilisez une couleur qui s'intègre bien à votre thème */
-  }
-  
-  #about p, #about ul {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    text-align: justify;
-  }
-  
-  #about ul {
-    list-style-type: none; /* Enlève les puces des listes */
-    padding: 0;
-  }
-  
-  #about ul li:before {
-    content: "•"; /* Ajoute une puce personnalisée */
-    color: #007bff; /* Couleur de la puce */
-    font-weight: bold; /* Rend la puce plus visible */
-    display: inline-block; 
-    width: 1em; /* Espacement avant le texte */
-    margin-left: -1em; /* Ajuste l'espacement à gauche */
-  }
-  
-  #about a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  #about a:hover {
-    text-decoration: underline;
-  }
-  
-  #about .btn-primary {
-    background-color: #007bff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1rem;
-    color: #fff;
-    transition: background-color 0.3s ease;
-  }
-  
-  #about .btn-primary:hover {
-    background-color: #0056b3;
-  }
-  
-  #about aside {
-    background-color: #f8f9fa; /* Léger fond gris pour l'encadré */
-    padding: 20px;
-    margin-top: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Légère ombre portée */
-  }
-  
-  /* Responsive Design pour la section À propos */
-  @media (max-width: 768px) {
-    #about {
-      padding: 30px 20px;
-    }
-    
-    #about aside {
-      margin-top: 20px;
-    }
-  }
-  
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
 
-/* section Compétences */
+.navbar-nav .nav-link:hover {
+  color: var(--secondary-color);
+}
+
+/* =========================================================================== */
+/* Images                                                                     */
+/* =========================================================================== */
+img {
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================================================================== */
+/* Bouton "Retour en haut"                                                    */
+/* =========================================================================== */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-light);
+  cursor: pointer;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+#back-to-top.visible {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background-color: var(--secondary-color);
+}
+
+/* =========================================================================== */
+/* Sections spécifiques                                                       */
+/* =========================================================================== */
+
+/* Section "À propos" */
+#about {
+  background-color: var(--light-color);
+  text-align: center;
+  padding: 50px 0;
+}
+
+#about h2 {
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+#about img {
+  margin-bottom: 20px;
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
+  box-shadow: var(--shadow-light);
+}
+
+/* Section "Compétences" */
+#skills {
+  background-color: var(--background-color);
+}
 
 #skills .card {
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out;
+  border: none;
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease-in-out;
 }
 
 #skills .card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-dark);
 }
 
-#skills .card-title {
-    color: #007bff; 
+/* Section "Projets" */
+#projects {
+  background: linear-gradient(135deg, var(--primary-color) 30%, var(--secondary-color) 90%);
+  color: var(--light-color);
 }
 
-#skills h2 {
-    margin-bottom: 30px;
-    font-size: 2.5rem;
-}
-
-/* section Projets */
 #projects .card {
-    margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease-in-out;
 }
 
-#projects h2 {
-    margin-bottom: 30px;
-    font-size: 2.5rem;
+#projects .card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-dark);
 }
 
-/* section Contact */
-#contact form {
-    max-width: 600px;
-    margin: auto;
-}
+/* Section "Contact" */
 #contact {
-    background-color: #f9f9f9;
-    padding: 15px 0;
-  }
-  
-  #contact h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2.5rem;
-    color: #333;
-  }
-  
-  /* Styles du formulaire */
-  #contact-form {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: auto;
-  }
-  
-  #contact-form .form-group {
-    margin-bottom: 25px;
-  }
-  
-  #contact-form label {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  #contact-form input,
-  #contact-form textarea {
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  #contact-form button[type="submit"] {
-    width: 100%;
-    background-color: #007bff; /* Bootstrap primary color */
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s;
-  }
-  
-  #contact-form button[type="submit"]:hover {
-    background-color: #0056b3; /* Darker blue */
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 767px) {
-    #contact-form {
-      padding: 15px;
-    }
-  }
-  
+  background-color: var(--light-color);
+}
 
-/* Styles du footer */
+#contact .form-group label {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+#contact .btn-primary {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* =========================================================================== */
+/* Footer                                                                     */
+/* =========================================================================== */
 footer {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+  background-color: #333;
+  color: var(--light-color);
+  padding: 20px 0;
+  text-align: center;
 }
 
 footer a {
-    color: #f8f9fa;
-    text-decoration: none;
+  color: var(--light-color);
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  color: var(--primary-color);
+}
+
+/* =========================================================================== */
+/* Responsive                                                                 */
+/* =========================================================================== */
+@media (max-width: 768px) {
+  h2 {
+      font-size: 2rem;
+  }
+
+  nav.navbar {
+      font-size: 0.9rem;
+  }
+
+  section {
+      padding: 30px 10px;
+  }
 }

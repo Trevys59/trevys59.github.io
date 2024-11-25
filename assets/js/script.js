@@ -1,71 +1,102 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
+    // Initialisation des fonctionnalités après le chargement de la page
+    initSmoothScroll();
+    initBackToTopButton();
+    initContactForm();
+    initScrollAnimations();
+});
+
+// Fonction pour gérer le défilement fluide vers les ancres
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth',
+            });
+        });
+    });
+}
+
+// Fonction pour gérer le bouton "Retour en haut"
+function initBackToTopButton() {
+    const backToTopButton = document.getElementById("back-to-top");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add("visible");
+        } else {
+            backToTopButton.classList.remove("visible");
+        }
+    });
+
+    // Ajoute un événement pour revenir en haut lorsque le bouton est cliqué
+    backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
+}
+
+// Fonction pour gérer le formulaire de contact
+function initContactForm() {
     const contactForm = document.getElementById("contact-form");
-    
-    contactForm.addEventListener("submit", function(event) {
+
+    contactForm.addEventListener("submit", function (event) {
         event.preventDefault(); // Empêche l'envoi du formulaire
 
         // Récupération des valeurs du formulaire
-        // Récupération des valeurs du formulaire
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-        var message = document.getElementById('message').value;
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
 
-        // Validation simple
-        if (name && email && message) {
-            // Ici, Tu peux ajouter une intégration avec un service d'email
-            submitForm();
-            console.log("Nom:", name, "Email:", email, "Message:", message);
-            alert("Merci pour votre message, je vous contacterai bientôt !");
-            // contactForm.reset();  //Décommentez pour réinitialiser le formulaire après l'envoi
-        } else {
-            alert("Veuillez remplir tous les champs.");
+        // Validation des champs
+        if (!validateContactForm(name, email, message)) {
+            alert("Veuillez remplir tous les champs correctement.");
+            return;
         }
 
-        
+        // Intégration ou action lors de la soumission du formulaire
+        sendContactEmail(name, email, message);
     });
-    function submitForm() {
-       // Construction de l'URL mailto
-        var mailtoLink = 'mailto:trevys.sarrazyn@gmail.com' // Remplacez par votre adresse e-mail
-                       + '?subject=Contact Form Submission'
-                       + '&body=Nom: ' + encodeURIComponent(name)
-                       + '%0D%0AEmail: ' + encodeURIComponent(email)
-                       + '%0D%0AMessage:%0D%0A' + encodeURIComponent(message);
-    
-        // Ouvrir le client de messagerie
-        window.location.href = mailtoLink;
-    
-        // Prévenir le comportement par défaut du formulaire
-        return false;
+}
+
+// Validation du formulaire de contact
+function validateContactForm(name, email, message) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple validation d'email
+
+    if (!name || !email || !message) {
+        return false; // Un champ est vide
     }
-});
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-// Bouton retour en haut
-const backToTopButton = document.getElementById("back-to-top");
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        backToTopButton.classList.add("visible");
-    } else {
-        backToTopButton.classList.remove("visible");
+    if (!emailRegex.test(email)) {
+        alert("Veuillez entrer une adresse e-mail valide.");
+        return false; // Email invalide
     }
-});
 
+    return true; // Formulaire valide
+}
 
-// Animation au défilement
-document.addEventListener("DOMContentLoaded", () => {
+// Envoi d'un e-mail via mailto
+function sendContactEmail(name, email, message) {
+    const mailtoLink = `mailto:trevys.sarrazyn@gmail.com?subject=Contact Form Submission&body=Nom: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AMessage:%0D%0A${encodeURIComponent(message)}`;
+
+    // Ouvrir le client de messagerie
+    window.location.href = mailtoLink;
+
+    // Réinitialise le formulaire après l'envoi
+    document.getElementById("contact-form").reset();
+
+    alert("Merci pour votre message, je vous contacterai bientôt !");
+}
+
+// Fonction pour gérer les animations au défilement
+function initScrollAnimations() {
     const sections = document.querySelectorAll("section");
 
     const options = {
-        threshold: 0.1
+        threshold: 0.1,
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -79,4 +110,4 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach(section => {
         observer.observe(section);
     });
-});
+}
