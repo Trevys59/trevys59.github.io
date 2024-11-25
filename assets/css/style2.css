@@ -37,32 +37,38 @@ nav.navbar {
     text-align: center;
 }
 
+/* Titre principal */
 #about h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
     color: #007bff;
 }
 
-#about p, #about ul {
+/* Texte général et paragraphes */
+#about p {
     font-size: 1.1rem;
     line-height: 1.8;
+    color: #333;
     text-align: justify;
+    margin-bottom: 20px;
 }
 
-#about ul {
-    list-style-type: none;
-    padding: 0;
+/* Photo de profil */
+#about img {
+    margin-bottom: 20px;
+    border: 3px solid #007bff;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#about ul li:before {
-    content: "•";
+/* Icônes des centres d'intérêt */
+#about .material-symbols-outlined {
+    font-size: 3rem;
     color: #007bff;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+    margin-bottom: 10px;
 }
 
+/* Boutons et liens */
 #about a {
     color: #007bff;
     text-decoration: none;
@@ -86,37 +92,41 @@ nav.navbar {
     background-color: #0056b3;
 }
 
-#about .social-links a {
-    margin: 5px;
-}
-
+/* Bloc "Parcours scolaire" */
 #about aside {
     background-color: #f8f9fa;
     padding: 20px;
     margin-top: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#about img {
+/* Cartes "Parcours scolaire" */
+#about aside .card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    border: 3px solid #007bff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: transform 0.3s ease-in-out;
 }
 
-#about .material-symbols-outlined {
-    font-size: 3rem;
+#about aside .card:hover {
+    transform: translateY(-5px);
+}
+
+/* Statistiques ou faits marquants */
+#about .row h3 {
     color: #007bff;
+    font-size: 2.5rem;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
-#about p {
-    font-size: 1.1rem;
-    color: #333;
+#about .row p {
+    font-size: 1rem;
+    color: #555;
 }
 
-
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
     #about {
         padding: 30px 20px;
@@ -125,14 +135,15 @@ nav.navbar {
     #about aside {
         margin-top: 20px;
     }
-}
 
-#about .row h3 {
-    color: #007bff;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
+    #about h2 {
+        font-size: 2rem;
+    }
 
+    #about .material-symbols-outlined {
+        font-size: 2.5rem;
+    }
+}
 
 /* section Compétences */
 #skills .card {
