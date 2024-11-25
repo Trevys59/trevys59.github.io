@@ -181,6 +181,7 @@ img:hover {
 /* Section "Contact" */
 #contact {
   background-color: var(--light-color);
+  bottom: 10 px;
 }
 
 #contact .form-group label {
