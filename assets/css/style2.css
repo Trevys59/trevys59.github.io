@@ -213,6 +213,8 @@ footer a:hover {
     box-shadow: 1px 5px 5px rgba(107, 107, 107, 0.842);
 }
 
+/*NEW****************************************************************************************************************/
+
 @media (max-width: 768px) {
     .container {
         padding: 10px;
@@ -225,4 +227,34 @@ footer a:hover {
     #about h2, #skills h2, #projects h2, #contact h2 {
         font-size: 1.8rem;
     }
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#back-to-top:hover {
+    background-color: #0056b3;
+}
+
+section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #007bff;
 }
