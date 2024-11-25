@@ -13,7 +13,9 @@ h2 {
 
 /* Styles du header */
 nav.navbar {
-    margin-bottom: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
 }
 
 .navbar-nav .nav-item .nav-link {
@@ -209,4 +211,18 @@ footer a:hover {
     margin-right: 69px;
     font-size: 3em !important;
     box-shadow: 1px 5px 5px rgba(107, 107, 107, 0.842);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+
+    #about h2, #skills h2, #projects h2, #contact h2 {
+        font-size: 1.8rem;
+    }
 }
