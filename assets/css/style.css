@@ -224,6 +224,7 @@ footer a:hover {
 /* =========================================================================== */
 #BLC{
   background-image: url('../images/blc/FondBasic.png');
+  font-family: 'Poppins', sans-serif;
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
