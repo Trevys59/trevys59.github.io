@@ -19,9 +19,10 @@ function initSmoothScroll() {
 }
 
 // Fonction pour gérer le bouton "Retour en haut"
-function initBackToTopButton() {
+document.addEventListener("DOMContentLoaded", () => {
     const backToTopButton = document.getElementById("back-to-top");
 
+    // Affiche ou cache le bouton selon la position de défilement
     window.addEventListener("scroll", () => {
         if (window.scrollY > 300) {
             backToTopButton.classList.add("visible");
@@ -30,14 +31,15 @@ function initBackToTopButton() {
         }
     });
 
-    // Ajoute un événement pour revenir en haut lorsque le bouton est cliqué
+    // Fait remonter la page lorsqu'on clique sur le bouton
     backToTopButton.addEventListener("click", () => {
         window.scrollTo({
             top: 0,
             behavior: "smooth",
         });
     });
-}
+});
+
 
 // Fonction pour gérer le formulaire de contact
 function initContactForm() {
