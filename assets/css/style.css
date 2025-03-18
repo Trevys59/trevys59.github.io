@@ -506,3 +506,35 @@ footer a:hover {
     transform: translateY(0);
   }
 }
+
+/* Animation d'apparition et effet hover pour les centres d'intérêts */
+.interest-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+/* Animation de survol pour dynamiser l'icône */
+.material-symbols-outlined {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.interest-item:hover .material-symbols-outlined {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* Staggered animation pour chaque élément */
+.interest-item:nth-child(1) { animation-delay: 0.2s; }
+.interest-item:nth-child(2) { animation-delay: 0.4s; }
+.interest-item:nth-child(3) { animation-delay: 0.6s; }
+.interest-item:nth-child(4) { animation-delay: 0.8s; }
+.interest-item:nth-child(5) { animation-delay: 1s; }
+.interest-item:nth-child(6) { animation-delay: 1.2s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
