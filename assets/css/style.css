@@ -416,3 +416,93 @@ footer a:hover {
     transform: translateY(0);
   }
 }
+
+/* Styles pour la section Expérience Professionnelle animée */
+.experience-pro {
+  padding: 2rem 0;
+  position: relative;
+}
+
+.experience-pro h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+.experience-pro .timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.experience-pro .timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: var(--primary-color);
+}
+
+.experience-pro .timeline-item {
+  position: relative;
+  width: 45%;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  background: var(--light-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow-light);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.6s forwards;
+}
+
+.experience-pro .timeline-item:nth-child(odd) {
+  left: 0;
+  animation-delay: 0.2s;
+}
+
+.experience-pro .timeline-item:nth-child(even) {
+  left: 55%;
+  animation-delay: 0.4s;
+}
+
+.experience-pro .timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  width: 15px;
+  height: 15px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  border: 3px solid var(--light-color);
+}
+
+.experience-pro .timeline-item:nth-child(odd)::before {
+  right: -8px;
+}
+
+.experience-pro .timeline-item:nth-child(even)::before {
+  left: -8px;
+}
+
+.experience-pro .timeline-content h5 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.experience-pro .timeline-content .date {
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  color: var(--secondary-color);
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
