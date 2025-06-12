@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initBackToTopButton();
     initContactForm();
     initScrollAnimations();
+    initThemeToggle();
 });
 
 // Fonction pour gérer le défilement fluide vers les ancres
@@ -88,5 +89,23 @@ function initScrollAnimations() {
 
     sections.forEach(section => {
         observer.observe(section);
+    });
+}
+
+// Gestion du thème sombre
+function initThemeToggle() {
+    const toggle = document.getElementById("theme-toggle");
+    if (!toggle) return;
+
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        toggle.checked = true;
+    }
+
+    toggle.addEventListener("change", () => {
+        document.body.classList.toggle("dark-mode");
+        const theme = document.body.classList.contains("dark-mode") ? "dark" : "light";
+        localStorage.setItem("theme", theme);
     });
 }
