@@ -19,6 +19,30 @@ function initSmoothScroll() {
     });
 }
 
+// Création et gestion du bouton "Back to Top"
+function initBackToTopButton() {
+    // Création du bouton s'il n'existe pas
+    let backToTop = document.getElementById("back-to-top");
+    if (!backToTop) {
+        backToTop = document.createElement("button");
+        backToTop.id = "back-to-top";
+        backToTop.textContent = "↑";
+        document.body.appendChild(backToTop);
+    }
+
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            backToTop.classList.add("visible");
+        } else {
+            backToTop.classList.remove("visible");
+        }
+    });
+}
+
 // Fonction pour gérer le formulaire de contact
 function initContactForm() {
     const contactForm = document.getElementById("contact-form");
